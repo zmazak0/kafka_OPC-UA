@@ -16,14 +16,14 @@ import _thread
 # Имя приложения
 from opcua.ua import NodeId, NodeIdType
 
-INSTANCE_NAME = os.environ.get('INSTANCE_NAME', 'aszolotarev-kafka-opcua')
+INSTANCE_NAME = os.environ.get('INSTANCE_NAME', 'new-kafka-opcua')
 # Параметры подключения для OPC UA
 OPCUA_SERVER = os.environ.get('OPCUA_SERVER', '0.0.0.0')
 OPCUA_PORT = os.environ.get('OPCUA_PORT', '4840')
 # Параметры подключения для Apache Kafka
 KAFKA_SERVER = os.environ.get('KAFKA_SERVER', 'localhost')
 KAFKA_PORT = os.environ.get('KAFKA_PORT', '9092')
-KAFKA_TOPIC = os.environ.get('KAFKA_TOPIC', 'aszolotarev')
+KAFKA_TOPIC = os.environ.get('KAFKA_TOPIC', 'new')
 # Время между записями в Apache Kafka
 SLEEP_DURATION = os.environ.get('SLEEP_DURATION', '1')
 # Лог пишем сюда
