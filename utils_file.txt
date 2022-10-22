@@ -1,0 +1,7 @@
+MAIVariable 6.7 float
+MAISyn 0 ua.VariantType.Float
+MAIStringVariable "Really nice string" String
+MAIDateTimeVar utcnow DATE
+MAIarrayvar [6.7, 7.9] Array
+
+docker build -t kafka_to_opcua .
