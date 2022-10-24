@@ -15,14 +15,14 @@ RUN mkdir /response_time_measurements
 
 ENV OPCUA_SERVER 127.0.0.1
 ENV OPCUA_PORT 4840
-ENV KAFKA_SERVER 192.168.0.7
+ENV KAFKA_SERVER 127.0.0.1
 ENV KAFKA_PORT 9092
-ENV KAFKA_TOPIC aszolotarev
+ENV KAFKA_TOPIC new
 ENV SLEEP_DURATION 1
 ENV OUT_FILE /response_time_measurements/response
 #ENV COMPRESSION snappy
 
-COPY opc_ua_kafka_connector.py opc_ua_kafka_connector.py
+COPY main.py main.py
 COPY run.sh run.sh
 RUN chmod +x run.sh
 RUN sh run.sh
