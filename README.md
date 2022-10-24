@@ -1,15 +1,17 @@
-# kafka_OPC-UA
-Для запуска:
-1) Запустить брокер kafka (docker-compose)
-2) Запустить проект через Dockerfile или PyCharm (python file)
-3) Результаты выполнения запросов (время отклика) будет выведено в response_time.json
-4) Новые состояния объекта в OPC-UA обновляются с помощью API
-5) utils_file содержит начальные значения:
-    MAIVariable 6.7 float
-    MAISyn 0 ua.VariantType.Float
-    MAIStringVariable "Really nice string" String
-    MAIDateTimeVar utcnow DATE
-    MAIarrayvar [6.7, 7.9] Array
-И команду для запуска Dockerfile из текущей директории
-6) pip3libs.txt - необходимые библиотеки, подгружаются сами
-7) run.sh запускает .py файл в контейнере
+0)	Склонировать репозиторий https://github.com/zmazak0/kafka_OPC-UA 
+  git clone https://github.com/zmazak0/kafka_OPC-UA  
+1)	Запустить docker-compose:
+  cd kafka_OPC-UA
+  docker-compose up –d
+2)	Установить необходимые python библиотеки:
+  pip install -r .\requirements.txt 
+3)	Добавить topic в kafka:
+  docker exec -it kafka bash
+  cd opt/bitnami/kafka/bin
+  kafka-topics.sh --create --topic MAI_IoT --bootstrap-server 127.0.0.1:9092
+  exit
+4)	Запустить скрипт main.py
+  python .\main.py
+		 
+Результат записался в response_time.json и в консоль.
+ 
